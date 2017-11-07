@@ -1,0 +1,1 @@
+sorrz linux config
