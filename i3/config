@@ -55,6 +55,8 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+o gaps inner current plus 5
 bindsym $mod+p gaps inner current minus 5
 
+bindsym $mod+u gaps inner current set 10 
+
 
 # change focus
 bindsym $mod+j focus left
@@ -106,21 +108,30 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $workspace1 "Waterfox: "
+set $workspace2 "Work: "
+set $workspace3 "Work 2: "
+set $workspace4 "Work 3: "
+set $workspace5 "Steam: "
+set $workspace6 "Teamspeak3: "
+
+
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
