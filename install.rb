@@ -20,11 +20,18 @@ end
 
 def install_stuff
 	if packet_manager == "apt"
-		system('apt-get install i3 zsh vim & sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"') 
+		system('apt-get install i3 zsh vim ') 
 	elsif packet_manager == "pacman"
-		system('pacman -S i3 zsh vim & sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"' )
+		system('pacman -S i3 zsh vim ' )
 	end
 end
+
+def install_ohmyzsh
+
+	system('sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"')
+
+end
+
 
 def copy_cfg
 	if !dir_exist('~/.i3')
@@ -36,12 +43,14 @@ def copy_cfg
 end
 
 def start
-	puts "Press 1 to install , 2 to merge the config"
+	puts "Press 1 to install zsh, i3 and vim, 2 to install ohmyzsh, 3 to merge the config"
 	whato = gets.chomp.to_i
 
 	if whato == 1
 		install_stuff
 	elsif whato == 2
+		install_ohmyzsh
+	elsif whato == 3
 		copy_cfg
 	else
 		puts "Error"
