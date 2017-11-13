@@ -55,5 +55,4 @@ def start_program
 	copy('zsh/.zshrc','~/.zshrc')
 end
 
-puts packet_manager
-install_i3
+start_program
