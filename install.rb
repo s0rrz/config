@@ -36,7 +36,7 @@ end
 
 
 
-def start_program
+def install_stuff
 	if !dir_exist('/usr/bin/i3')
 		install_i3
 	end
@@ -49,10 +49,15 @@ def start_program
 		install_zsh
 	end
 
+end
 
+def copy_cfg
 	copy('i3/config', '~/.i3/config')
 	copy('vim/.vimrc', '~/.vimrc')
 	copy('zsh/.zshrc','~/.zshrc')
 end
 
-start_program
+
+install_stuff
+copy_cfg
+
