@@ -34,6 +34,13 @@ def install_zsh
 	system('sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" ')
 end
 
+def install_vim
+	if packet_manager == "apt"
+		system("apt-get install vim")
+	elsif packet_manager == "pacman"
+		system("pacman -S vim")
+	end
+end
 
 
 def install_stuff
@@ -47,6 +54,10 @@ def install_stuff
 	
 	if !dir_exist('/usr/bin/zsh')
 		install_zsh
+	end
+
+	if !dir_exist('/usr/bin/vim')
+		install_vim
 	end
 
 end
